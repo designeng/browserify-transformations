@@ -11,11 +11,6 @@ gutil       = require 'gulp-util'
 
 mainCoffeeFile = './source/main.coffee'
 
-gulp.task 'compile', ->
-    gulp.src('./source/**/*.coffee')
-        .pipe(coffeeify({bare: true, header: true}))
-        .pipe gulp.dest('./source/js');
-
 gulp.task 'compile-coffee', () ->
     gulp.src('./source/**/*.coffee')
         .pipe coffee({bare: true}).on('error', gutil.log)
@@ -32,6 +27,5 @@ gulp.task 'js', ['compile-coffee'], () ->
     # .transform 'debowerify'
     # .transform 'uglifyify'
     .bundle()
-    # .pipe gutil.log
     .pipe source 'main.js'
     .pipe gulp.dest 'dist'
