@@ -4,7 +4,6 @@ path       = require 'path'
 browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 
-coffeeify   = require 'gulp-coffeeify'
 # alternate
 coffee      = require 'gulp-coffee'
 gutil       = require 'gulp-util'
